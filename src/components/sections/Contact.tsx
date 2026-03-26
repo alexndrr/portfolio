@@ -38,12 +38,10 @@ function ContactForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const fd = new FormData(e.currentTarget)
-    const name    = (fd.get('name')    as string) || ''
-    const email   = (fd.get('email')   as string) || ''
     const subject = (fd.get('subject') as string) || ''
     const message = (fd.get('message') as string) || ''
 
-    const body = `From: ${name}${email ? ` (${email})` : ''}\n\n${message}`
+    const body = message
     window.location.href =
       `mailto:${personalInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
