@@ -34,6 +34,66 @@ const contactLinks = [
   },
 ]
 
+function ContactForm() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const fd = new FormData(e.currentTarget)
+    const name    = (fd.get('name')    as string) || ''
+    const email   = (fd.get('email')   as string) || ''
+    const subject = (fd.get('subject') as string) || ''
+    const message = (fd.get('message') as string) || ''
+
+    const body = `From: ${name}${email ? ` (${email})` : ''}\n\n${message}`
+    window.location.href =
+      `mailto:${personalInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  }
+
+  return (
+    <div className="card h-full">
+      <h3 className="font-display font-bold text-text-primary text-lg mb-6">Send a Quick Message</h3>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label className="font-body text-text-muted text-xs mb-1.5 block uppercase tracking-wider">Your Name</label>
+            <input type="text" name="name" placeholder="John Doe"
+              className="w-full bg-bg-primary border border-border-subtle rounded-lg px-4 py-3 font-body text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent/60 transition-colors" />
+          </div>
+          <div>
+            <label className="font-body text-text-muted text-xs mb-1.5 block uppercase tracking-wider">Your Email</label>
+            <input type="email" name="email" placeholder="john@example.com"
+              className="w-full bg-bg-primary border border-border-subtle rounded-lg px-4 py-3 font-body text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent/60 transition-colors" />
+          </div>
+        </div>
+
+        <div>
+          <label className="font-body text-text-muted text-xs mb-1.5 block uppercase tracking-wider">Subject</label>
+          <input type="text" name="subject" placeholder="Let's collaborate on..."
+            className="w-full bg-bg-primary border border-border-subtle rounded-lg px-4 py-3 font-body text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent/60 transition-colors" />
+        </div>
+
+        <div>
+          <label className="font-body text-text-muted text-xs mb-1.5 block uppercase tracking-wider">Message</label>
+          <textarea name="message" placeholder="Tell me about your project or opportunity..." rows={5}
+            className="w-full bg-bg-primary border border-border-subtle rounded-lg px-4 py-3 font-body text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent/60 transition-colors resize-none" />
+        </div>
+
+        <button type="submit" className="btn-primary w-full justify-center">
+          <FiSend size={16} />
+          Send Message
+        </button>
+      </form>
+
+      <p className="font-body text-text-muted text-xs mt-4 text-center">
+        Or email me directly at{' '}
+        <a href={`mailto:${personalInfo.email}`} className="text-accent hover:underline">
+          {personalInfo.email}
+        </a>
+      </p>
+    </div>
+  )
+}
+
 export default function Contact() {
   return (
     <section id="contact" className="py-24 md:py-32 bg-bg-secondary/50 relative overflow-hidden">
@@ -112,77 +172,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="card h-full">
-              <h3 className="font-display font-bold text-text-primary text-lg mb-6">Send a Quick Message</h3>
-
-              <form
-                action={`mailto:${personalInfo.email}`}
-                method="post"
-                encType="text/plain"
-                className="space-y-4"
-              >
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="font-body text-text-muted text-xs mb-1.5 block uppercase tracking-wider">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="John Doe"
-                      className="w-full bg-bg-primary border border-border-subtle rounded-lg px-4 py-3 font-body text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent/60 transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="font-body text-text-muted text-xs mb-1.5 block uppercase tracking-wider">
-                      Your Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="john@example.com"
-                      className="w-full bg-bg-primary border border-border-subtle rounded-lg px-4 py-3 font-body text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent/60 transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="font-body text-text-muted text-xs mb-1.5 block uppercase tracking-wider">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    name="subject"
-                    placeholder="Let's collaborate on..."
-                    className="w-full bg-bg-primary border border-border-subtle rounded-lg px-4 py-3 font-body text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent/60 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label className="font-body text-text-muted text-xs mb-1.5 block uppercase tracking-wider">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    placeholder="Tell me about your project or opportunity..."
-                    rows={5}
-                    className="w-full bg-bg-primary border border-border-subtle rounded-lg px-4 py-3 font-body text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent/60 transition-colors resize-none"
-                  />
-                </div>
-
-                <button type="submit" className="btn-primary w-full justify-center">
-                  <FiSend size={16} />
-                  Send Message
-                </button>
-              </form>
-
-              <p className="font-body text-text-muted text-xs mt-4 text-center">
-                Or email me directly at{' '}
-                <a href={`mailto:${personalInfo.email}`} className="text-accent hover:underline">
-                  {personalInfo.email}
-                </a>
-              </p>
-            </div>
+            <ContactForm />
           </motion.div>
         </div>
       </div>

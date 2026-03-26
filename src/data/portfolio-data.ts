@@ -33,8 +33,8 @@ export const skills = [
       { name: 'C#', level: 'expert' },
       { name: 'Java', level: 'proficient' },
       { name: 'SQL', level: 'expert' },
-      { name: 'JavaScript', level: 'beginner' },
-      { name: 'TypeScript', level: 'beginner' },
+      { name: 'JavaScript', level: 'proficient' },
+      { name: 'TypeScript', level: 'proficient' },
     ],
   },
   {
@@ -44,8 +44,8 @@ export const skills = [
       { name: '.NET / ASP.NET', level: 'expert' },
       { name: 'Spring Boot', level: 'proficient' },
       { name: 'Blazor', level: 'proficient' },
-      { name: 'AngularJS', level: 'beginner' },
-      { name: 'Next.js', level: 'beginner' },
+      { name: 'AngularJS', level: 'proficient' },
+      { name: 'Next.js', level: 'proficient' },
     ],
   },
   {

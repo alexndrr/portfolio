@@ -57,7 +57,7 @@ export default function Experience() {
                             <span className="font-body text-accent text-sm font-medium">{job.company}</span>
                           </div>
                         </div>
-                        <div className="flex flex-col items-end gap-2 flex-shrink-0">
+                        <div className="flex flex-col items-start md:items-end gap-2 flex-shrink-0">
                           <span className={`text-xs font-display font-medium px-2.5 py-1 rounded-full border ${typeColors[job.type] ?? typeColors['Full-time']}`}>
                             {job.type}
                           </span>
