@@ -194,6 +194,17 @@ export const certifications = [
   },
   {
     id: 5,
+    title: 'Claude Code - The Practical Guide',
+    issuer: 'Udemy',
+    platform: 'Udemy',
+    month: 'Apr',
+    year: '2026',
+    credentialId: 'UC-03d91f67-2e12-41b9-82dd-6305863ebb17',
+    skills: ['Claude Code', 'AI-Assisted Development', 'Developer Productivity'],
+    credentialUrl: 'https://ude.my/UC-03d91f67-2e12-41b9-82dd-6305863ebb17',
+  },
+  {
+    id: 6,
     title: 'Make an E-Commerce Website with Blazor WebAssembly in .NET 6',
     issuer: 'Udemy',
     platform: 'Udemy',
