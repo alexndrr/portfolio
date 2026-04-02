@@ -60,7 +60,7 @@ export default function Certifications() {
             return (
               <motion.a
                 key={cert.id}
-                href={'credentialUrl' in cert ? String(cert.credentialUrl) : undefined}
+                href={cert.credentialUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
@@ -87,9 +87,9 @@ export default function Certifications() {
                 </div>
 
                 {/* Skill tags */}
-                {'skills' in cert && cert.skills && (
+                {cert.skills && cert.skills.length > 0 && (
                   <div className="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-border-subtle">
-                    {(cert.skills as string[]).map((skill: string) => (
+                    {cert.skills.map((skill: string) => (
                       <span key={skill} className="font-body text-xs text-text-secondary border border-border-subtle rounded-md px-2 py-0.5">
                         {skill}
                       </span>

@@ -216,6 +216,18 @@ export const certifications = [
   },
 ]
 
+export const projects = [
+  {
+    id: 1,
+    title: 'This Portfolio',
+    description:
+      "The very site you're looking at — built with React, TypeScript, Tailwind CSS, and Framer Motion. Dockerized and deployed on Netlify.",
+    tags: ['React', 'TypeScript', 'Tailwind', 'Docker'],
+    github: 'https://github.com/alexndrr/portfolio',
+    status: 'live' as const,
+  },
+]
+
 export const education = {
   degree: "Bachelor's Degree in Information Technology Engineering",
   institution: 'College of Applied Studies for Information Technologies (ITS)',

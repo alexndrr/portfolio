@@ -1,17 +1,7 @@
 import { motion } from 'framer-motion'
 import { FiGithub, FiExternalLink, FiLock, FiPlus } from 'react-icons/fi'
 import SectionTitle from '../ui/SectionTitle'
-
-const placeholderProjects = [
-  {
-    id: 1,
-    title: 'This Portfolio',
-    description: 'The very site you\'re looking at — built with React, TypeScript, Tailwind CSS, and Framer Motion. Dockerized and deployed on Netlify.',
-    tags: ['React', 'TypeScript', 'Tailwind', 'Docker'],
-    github: 'https://github.com/alexndrr',
-    status: 'live',
-  },
-]
+import { projects } from '../../data/portfolio-data'
 
 export default function Projects() {
   return (
@@ -26,7 +16,7 @@ export default function Projects() {
         />
 
         <div className="flex flex-wrap justify-center gap-6 mb-12">
-          {placeholderProjects.map((project, i) => (
+          {projects.map((project, i) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -51,6 +41,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-text-secondary hover:text-accent transition-colors"
+                      aria-label={`View ${project.title} on GitHub`}
                     >
                       <FiGithub size={16} />
                     </a>

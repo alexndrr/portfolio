@@ -1,3 +1,4 @@
+import ErrorBoundary from './components/ui/ErrorBoundary'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Hero from './components/sections/Hero'
@@ -10,18 +11,20 @@ import Contact from './components/sections/Contact'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-bg-primary text-text-primary">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Certifications />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ErrorBoundary>
+      <div className="min-h-screen bg-bg-primary text-text-primary">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Certifications />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ErrorBoundary>
   )
 }

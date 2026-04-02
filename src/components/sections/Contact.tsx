@@ -78,11 +78,13 @@ function ContactForm() {
 
         <button type="submit" className="btn-primary w-full justify-center">
           <FiSend size={16} />
-          Send Message
+          Open in Email Client
         </button>
       </form>
 
       <p className="font-body text-text-muted text-xs mt-4 text-center">
+        This will open your default email app with the message pre-filled.
+        <br />
         Or email me directly at{' '}
         <a href={`mailto:${personalInfo.email}`} className="text-accent hover:underline">
           {personalInfo.email}
