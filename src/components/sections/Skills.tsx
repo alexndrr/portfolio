@@ -21,6 +21,7 @@ const techIcons: Record<string, React.ElementType> = {
   'JavaScript': SiJavascript,
   'TypeScript': SiTypescript,
   '.NET / ASP.NET': SiDotnet,
+  '.NET MAUI': SiDotnet,
   'Spring Boot': SiSpring,
   'Blazor': SiBlazor,
   'AngularJS': SiAngular,
