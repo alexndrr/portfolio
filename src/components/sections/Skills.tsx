@@ -6,7 +6,7 @@ import {
   SiDocker, SiKubernetes, SiGit, SiGrafana, SiApachekafka, SiRabbitmq,
   SiJira,
 } from 'react-icons/si'
-import { FiCode, FiDatabase, FiZap, FiTool, FiCpu, FiLayers } from 'react-icons/fi'
+import { FiCode, FiDatabase, FiZap, FiTool, FiCpu, FiLayers, FiTerminal } from 'react-icons/fi'
 import SectionTitle from '../ui/SectionTitle'
 import { skills } from '../../data/portfolio-data'
 
@@ -44,6 +44,7 @@ const categoryIcons: Record<string, React.ElementType> = {
   'Messaging & APIs': FiZap,
   'DevOps & Tools': FiTool,
   Architecture: FiCpu,
+  'AI-Assisted Development': FiTerminal,
 }
 
 export default function Skills() {

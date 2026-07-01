@@ -90,6 +90,16 @@ export const skills = [
       { name: 'Process Automation', level: 'expert' },
     ],
   },
+  {
+    category: 'AI-Assisted Development',
+    icon: 'terminal',
+    items: [
+      { name: 'Claude Code', level: 'proficient' },
+      { name: 'AI Pair Programming', level: 'proficient' },
+      { name: 'Prompt Engineering', level: 'proficient' },
+      { name: 'Model Context Protocol', level: 'beginner' },
+    ],
+  },
 ]
 
 export const experience = [
